@@ -1,0 +1,23 @@
+{
+  "name": "cordova-plugin-app-metrika",
+  "version": "0.0.1",
+  "description": "PhoneGap\\XDK Cordova plug-in for Yandex Metrica 2.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vvnab/AppMetricaCordovaPlugin.git"
+  },
+  "keywords": [
+    "yandex",
+    "metrika"
+  ],
+  "author": "vvnab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vvnab/AppMetricaCordovaPlugin/issues"
+  },
+  "homepage": "https://github.com/vvnab/AppMetricaCordovaPlugin#readme"
+}
