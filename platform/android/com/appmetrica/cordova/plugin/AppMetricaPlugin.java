@@ -15,15 +15,19 @@ import com.yandex.metrica.YandexMetrica;
 import android.content.Context;
 import android.util.Log;
 
-public class AppMetricaPlugin extends CordovaPlugin { 
+public class AppMetricaPlugin extends CordovaPlugin {
     @Override
     public boolean execute(final String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		if("activate".equals(action))
-        {
-            activate(args, callbackContext);
-            return true;
-        }
-        return false;
+      {
+          activate(args, callbackContext);
+          return true;
+      }
+      if("reportEvent".equals(action)){
+          reportEvent(args, callbackContext);
+          return true;
+      }
+      return false;
     }
 
     @Override
@@ -39,6 +43,33 @@ public class AppMetricaPlugin extends CordovaPlugin {
     @Override
     public void onDestroy() {
         YandexMetrica.onPauseActivity(cordova.getActivity());
+    }
+
+    //Тречим событие
+    private void reportEvent(JSONArray parameters, final CallbackContext callbackContext)
+    {
+      try
+      {
+        final String eventName = parameters.getString(0);
+        //final String jsonValue = parameters.getString(1);
+
+        // YandexMetrica.reportEvent(eventName, jsonValue);
+        // Log.v("AppMetrica ->", eventName + " " + jsonValue);
+
+        cordova.getThreadPool().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                      YandexMetrica.reportEvent(eventName);
+                      Log.v("AppMetrica ->", eventName);
+          }
+        });
+
+      }
+      catch (JSONException e)
+      {
+          e.printStackTrace();
+          return;
+      }
     }
 
     private void activate(JSONArray parameters, final CallbackContext callbackContext) {

@@ -4,15 +4,26 @@
 	};
 
 	AppMetrica.prototype.activate = function (args) {
-    	cordova.exec(function(winParam) {}, 
+    	cordova.exec(function(winParam) {},
 					 function(error) {
 						console.warn('cordova.exec ' + error)
-					 }, 
-					 "AppMetricaPlugin", 
-					 "activate", 
+					 },
+					 "AppMetricaPlugin",
+					 "activate",
 					 [args]);
 	};
-	
+
+	AppMetrica.prototype.reportEvent = function (args) {
+		cordova.exec(function(winParam) {},
+					function (error) {
+						console.warn('cordova.exec' + console.error());
+					},
+					"AppMetricaPlugin",
+					"reportEvent",
+					[args]
+				);
+	};
+
 	global.cordova.addConstructor(function() {
 		if (!global.Cordova) {
 			global.Cordova = global.cordova;
