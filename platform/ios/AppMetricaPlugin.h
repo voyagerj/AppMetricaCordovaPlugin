@@ -4,4 +4,5 @@
 
 @interface AppMetricaPlugin : CDVPlugin <UIApplicationDelegate>
 - (void)activate:(CDVInvokedUrlCommand*)command;
+- (void)reportEvent:(CDVInvokedUrlCommand*)command;
 @end
