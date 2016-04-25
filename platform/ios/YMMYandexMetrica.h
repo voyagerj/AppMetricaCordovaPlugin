@@ -74,7 +74,7 @@ typedef NS_ENUM(NSInteger, YMMYandexMetricaEventErrorCode) {
  If enabled and location set via setLocation: method - that location would be used.
  If enabled and location is not set via setLocation,
  but application has appropriate permission - CLLocationManager would be used to acquire location data.
- 
+
  @param enabled Flag indicating if reporting location to AppMetrica enabled
  Enabled by default.
  */
@@ -82,7 +82,7 @@ typedef NS_ENUM(NSInteger, YMMYandexMetricaEventErrorCode) {
 
 /** Set location to AppMetrica
  To enable AppMetrica to use this location trackLocationEnabled should be 'YES'
- 
+
  @param location Custom device location to be reported.
  */
 + (void)setLocation:(CLLocation *)location;

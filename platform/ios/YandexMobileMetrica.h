@@ -9,7 +9,7 @@
  * You may obtain a copy of the License at http://legal.yandex.com/metrica_termsofuse/
  */
 
-#import <YandexMobileMetrica/YMMYandexMetrica.h>
-#import <YandexMobileMetrica/YMMVersion.h>
-#import <YandexMobileMetrica/YMMYandexMetricaConfiguration.h>
-#import <YandexMobileMetrica/YMMYandexMetricaPreloadInfo.h>
+#import "YMMYandexMetrica.h"
+#import "YMMVersion.h"
+#import "YMMYandexMetricaConfiguration.h"
+#import "YMMYandexMetricaPreloadInfo.h"
