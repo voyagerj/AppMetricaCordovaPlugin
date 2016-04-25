@@ -20,18 +20,15 @@
 	 [YMMYandexMetrica activateWithApiKey:devKey];
 };
 
-- (void)reportEvent:(CDVInvokedUrlCommand*)command
-{
-  if ([command.arguments count] < 1) {
-      return;
-  }
-
-  NSString* eventName = [command.arguments objectAtIndex:0];
-  NSDictionary *params = @{@"test": @"test"};
-  [YMMYandexMetrica reportEvent:eventName
-    parameters:params
-    onFailure:nil;
-  }];
-}
+// - (void)reportEvent:(CDVInvokedUrlCommand*)command
+// {
+//   if ([command.arguments count] < 1) {
+//       return;
+//   }
+//
+//   NSString* eventName = [command.arguments objectAtIndex:0];
+//   // NSDictionary *params = @{@"test": @"test"};
+//   [YMMYandexMetrica reportEvent:eventName parameters:@{@"test": @"test"} onFailure:nil ];
+// };
 
 @end
