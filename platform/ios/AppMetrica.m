@@ -5,7 +5,7 @@
 
 - (CDVPlugin *)initWithWebView:(UIWebView *)theWebView
 {
-    self = (AppMetricaPlugin *)[super initWithWebView:theWebView];
+    self = (AppMetrica *)[super initWithWebView:theWebView];
     return self;
 }
 
@@ -28,9 +28,9 @@
   }
 
   NSString* eventName = [command.arguments objectAtIndex:0];
-  // NSDictionary *params = @{@"test": @"test"};
-  [YMMYandexMetrica reportEvent:eventName parameters:@{@"test": @"10Levels"} onFailure:nil ];
-   NSLog(@"--> reportEvent");
+
+  [YMMYandexMetrica reportEvent:eventName parameters:@{} onFailure:nil ];
+   NSLog(@"reportEvent --> %@", eventName);
 };
 
 @end

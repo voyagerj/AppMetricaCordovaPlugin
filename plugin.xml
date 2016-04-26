@@ -89,8 +89,14 @@
         <framework src="Foundation.framework" />
         <framework src="CoreTelephony.framework" />
         <framework src="CoreLocation.framework" />
+        <framework src="SafariServices.framework" />
         <framework src="CoreGraphics.framework" />
         <framework src="AdSupport.framework" />
+        <!-- <framework src="libz.tbd" /> -->
+        <!-- <framework src="libsql3.tbd" /> -->
+        <framework src="Security.framework" />
+        <!-- <framework src="libc++.tbd" /> -->
+
     </platform>
 
 </plugin>
