@@ -1,7 +1,7 @@
-#import "AppMetricaPlugin.h"
+#import "AppMetrica.h"
 #import "YandexMobileMetrica.h"
 
-@implementation AppMetricaPlugin
+@implementation AppMetrica
 
 - (CDVPlugin *)initWithWebView:(UIWebView *)theWebView
 {
@@ -18,6 +18,7 @@
     NSString* devKey = [command.arguments objectAtIndex:0];
 
 	 [YMMYandexMetrica activateWithApiKey:devKey];
+   NSLog(@"--> Activate");
 };
 
 - (void)reportEvent:(CDVInvokedUrlCommand*)command
@@ -28,7 +29,8 @@
 
   NSString* eventName = [command.arguments objectAtIndex:0];
   // NSDictionary *params = @{@"test": @"test"};
-  [YMMYandexMetrica reportEvent:eventName parameters:@{@"test": @"test"} onFailure:nil ];
+  [YMMYandexMetrica reportEvent:eventName parameters:@{@"test": @"10Levels"} onFailure:nil ];
+   NSLog(@"--> reportEvent");
 };
 
 @end
