@@ -11,3 +11,5 @@
 
 #import "YMMYandexMetrica.h"
 #import "YMMVersion.h"
+#import "YMMYandexMetricaConfiguration.h"
+#import "YMMYandexMetricaPreloadInfo.h"

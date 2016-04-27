@@ -20,25 +20,25 @@
                 <param name="android-package" value="com.appmetrica.cordova.plugin.AppMetricaPlugin"/>
             </feature>
         </config-file>
-		
+
 		<config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.INTERNET"/>
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
             <uses-permission android:name="android.permission.READ_PHONE_STATE" />
         </config-file>
-		
+
 		<config-file target="AndroidManifest.xml" parent="/manifest/application">
             <receiver
 				android:name="com.yandex.metrica.MetricaEventHandler"
 				android:enabled="true"
 				android:exported="true">
-            
+
 				<intent-filter>
 					<action android:name="com.android.vending.INSTALL_REFERRER"/>
 				</intent-filter>
 			</receiver>
         </config-file>
-		
+
 		<config-file target="AndroidManifest.xml" parent="/manifest/application">
 			<service
 				android:name="com.yandex.metrica.MetricaService"
@@ -55,41 +55,48 @@
 					<meta-data android:name="metrica:api:level" android:value="32"/>
 			</service>
 		</config-file>
-				
+
 		<source-file src="platform/android/com/appmetrica/cordova/plugin/AppMetricaPlugin.java" target-dir="src/com/appmetrica/cordova/plugin" />
         <source-file src="platform/android/mobmetricalib-2.00.jar" target-dir="libs/"/>
     </platform>
-	
+
 	<!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="AppMetricaPlugin">
-                <param name="ios-package" value="AppMetricaPlugin" />
+            <feature name="AppMetrica">
+                <param name="ios-package" value="AppMetrica" />
             </feature>
         </config-file>
 
-        <header-file src="platform/ios/AppMetricaPlugin.h" />
-        <header-file src="platform/ios/YandexMobileMetrica.h" target="YandexMobileMetrica.h"/>
-		<header-file src="platform/ios/YMMVersion.h" target="YMMVersion.h"/>
-		<header-file src="platform/ios/YMMYandexMetrica.h" target="YMMYandexMetrica.h"/>
-		
-        <source-file src="platform/ios/AppMetricaPlugin.m" />
 
-        <source-file src="platform/ios/libYandexMobileMetrica.a" framework="true" />
+        <header-file src="platform/ios/YandexMobileMetrica.h" target="YandexMobileMetrica.h"/>
+		    <header-file src="platform/ios/YMMVersion.h" target="YMMVersion.h"/>
+		    <header-file src="platform/ios/YMMYandexMetrica.h" target="YMMYandexMetrica.h"/>
+		    <header-file src="platform/ios/YMMYandexMetricaPreloadInfo.h" target="YMMYandexMetricaPreloadInfo.h"/>
+		    <header-file src="platform/ios/YMMYandexMetricaConfiguration.h" target="YMMYandexMetricaConfiguration.h"/>
+
+        <header-file src="platform/ios/AppMetrica.h" />
+        <source-file src="platform/ios/AppMetrica.m" />
+        <!-- <framework src="YandexMobileMetrica.framework" weak="true" /> -->
+
+        <source-file src="platform/ios/YandexMobileMetrica.a" framework="true" />
         <source-file src="platform/ios/libFMDB.a" framework="true" />
         <source-file src="platform/ios/libKSCrash.a" framework="true" />
         <source-file src="platform/ios/libprotobuf-c.a" framework="true" />
 
-        <framework src="libsqlite3.dylib" />
-        <framework src="libz.dylib" />
-        <framework src="libc++.dylib" />
-        <framework src="SystemConfiguration" />
-        <framework src="UIKit" />
-        <framework src="Foundation" />
-        <framework src="CoreTelephony" />
-        <framework src="CoreLocation" />
-        <framework src="CoreGraphics" />
-        <framework src="AdSupport" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="UIKit.framework" />
+        <framework src="Foundation.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="CoreLocation.framework" />
+        <framework src="SafariServices.framework" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="AdSupport.framework" />
+        <!-- <framework src="libz.tbd" /> -->
+        <!-- <framework src="libsql3.tbd" /> -->
+        <framework src="Security.framework" />
+        <!-- <framework src="libc++.tbd" /> -->
+
     </platform>
-	
+
 </plugin>
