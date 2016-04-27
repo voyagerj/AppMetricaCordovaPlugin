@@ -19,7 +19,7 @@
 
 	 [YMMYandexMetrica activateWithApiKey:devKey];
    NSLog(@"--> Activate");
-};
+}
 
 - (void)reportEvent:(CDVInvokedUrlCommand*)command
 {
@@ -29,8 +29,13 @@
 
   NSString* eventName = [command.arguments objectAtIndex:0];
 
-  [YMMYandexMetrica reportEvent:eventName parameters:@{} onFailure:nil ];
+  // [YMMYandexMetrica reportEvent:eventName parameters:@{} onFailure:nil ];
+  [YMMYandexMetrica reportEvent:eventName
+                    onFailure:^(NSError *error) {
+                          NSLog(@"error: %@", [error localizedDescription]);
+                    }
+];
    NSLog(@"reportEvent --> %@", eventName);
-};
+}
 
 @end
