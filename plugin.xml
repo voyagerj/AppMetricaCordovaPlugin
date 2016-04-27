@@ -16,8 +16,8 @@
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="AppMetricaPlugin" >
-                <param name="android-package" value="com.appmetrica.cordova.plugin.AppMetricaPlugin"/>
+            <feature name="AppMetrica" >
+                <param name="android-package" value="com.appmetrica.cordova.plugin.AppMetrica"/>
             </feature>
         </config-file>
 
@@ -56,7 +56,7 @@
 			</service>
 		</config-file>
 
-		<source-file src="platform/android/com/appmetrica/cordova/plugin/AppMetricaPlugin.java" target-dir="src/com/appmetrica/cordova/plugin" />
+		<source-file src="platform/android/com/appmetrica/cordova/plugin/AppMetrica.java" target-dir="src/com/appmetrica/cordova/plugin" />
         <source-file src="platform/android/mobmetricalib-2.00.jar" target-dir="libs/"/>
     </platform>
 
