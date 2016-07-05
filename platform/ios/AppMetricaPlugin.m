@@ -1,4 +1,4 @@
-#import "AppMetrica.h"
+#import "AppMetricaPlugin.h"
 #import "YandexMobileMetrica/YandexMobileMetrica.h"
 
 @implementation AppMetrica
