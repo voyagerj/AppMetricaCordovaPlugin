@@ -71,17 +71,19 @@
         <header-file src="platform/ios/AppMetricaPlugin.h" />
         <source-file src="platform/ios/AppMetricaPlugin.m" />
 
-        <framework src="SystemConfiguration" />
-        <framework src="UIKit" />
-        <framework src="Foundation" />
-        <framework src="CoreTelephony" />
-        <framework src="CoreLocation" />
-        <framework src="CoreGraphics" />
-        <framework src="AdSupport" />
-        <framework src="Security" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="UIKit.framework" />
+        <framework src="Foundation.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="CoreLocation.framework" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="AdSupport.framework" />
+        <framework src="Security.framework" />
         <framework src="libsqlite3.dylib" />
         <framework src="libz.dylib" />
         <framework src="libc++.dylib" />
+
+        <framework src="platform/ios/Frameworks/YandexMobileMetrica.framework" custom="true" />
     </platform>
 	
 </plugin>
