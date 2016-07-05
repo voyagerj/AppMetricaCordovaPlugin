@@ -1,27 +1,41 @@
-(function (global) {
-	var AppMetrica;
-	AppMetrica = function () {
-	};
+cordova.define("com.appmetrica.cordova.plugins.appmetrica.AppMetrica", function(require, exports, module) {
+    (function (global) {
+        var AppMetrica;
+        AppMetrica = function () {
+        };
 
-	AppMetrica.prototype.activate = function (args) {
-    	cordova.exec(function(winParam) {}, 
-					 function(error) {
-						console.warn('cordova.exec ' + error)
-					 }, 
-					 "AppMetricaPlugin", 
-					 "activate", 
-					 [args]);
-	};
-	
-	global.cordova.addConstructor(function() {
-		if (!global.Cordova) {
-			global.Cordova = global.cordova;
-		};
+        AppMetrica.prototype.activate = function (args) {
+            cordova.exec(function(winParam) {},
+                function(error) {
+                    console.warn('cordova.exec ' + error)
+                },
+                "AppMetrica",
+                "activate",
+                [args]);
+        };
 
-		if (!global.plugins) {
-			global.plugins = {};
-		}
+        AppMetrica.prototype.reportEvent = function (event, params) {
+            cordova.exec(function(winParam) {},
+                function(error) {
+                    console.warn('cordova.exec ' + error)
+                },
+                "AppMetrica",
+                "reportEvent",
+                [event, params]);
+        };
 
-		global.plugins.appMetrica = new AppMetrica();
-	});
-}(window));
+
+        global.cordova.addConstructor(function() {
+            if (!global.Cordova) {
+                global.Cordova = global.cordova;
+            };
+
+            if (!global.plugins) {
+                global.plugins = {};
+            }
+
+            global.plugins.appMetrica = new AppMetrica();
+        });
+    }(window));
+
+});
