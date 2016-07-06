@@ -72,6 +72,7 @@
         <source-file src="platform/ios/AppMetricaPlugin.m" />
 
         <framework src="SystemConfiguration.framework" />
+        <framework src="SafariServices.framework" />
         <framework src="UIKit.framework" />
         <framework src="Foundation.framework" />
         <framework src="CoreTelephony.framework" />
