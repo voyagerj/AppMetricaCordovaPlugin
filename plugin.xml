@@ -64,7 +64,7 @@
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="AppMetricaPlugin">
-                <param name="ios-package" value="AppMetricaPlugin" />
+                <param name="ios-package" value="AppMetrica" />
             </feature>
         </config-file>
 
