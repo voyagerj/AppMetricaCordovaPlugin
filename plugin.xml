@@ -87,4 +87,26 @@
         <framework src="platform/ios/Frameworks/YandexMobileMetrica.framework" custom="true" />
     </platform>
 	
+	<!-- Windows Phone -->
+    <platform name="wp8">
+	
+          <config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App/Capabilities">
+               <Capability Name="ID_CAP_LOCATION" />
+			   <Capability Name="ID_CAP_NETWORKING" />
+			   <Capability Name="ID_CAP_IDENTITY_DEVICE" />
+          </config-file>
+          <config-file target="config.xml" parent="/*">
+               <feature name="AppMetrica">
+                    <param name="wp-package" value="AppMetrica"/>
+               </feature>
+          </config-file>
+          <source-file src="platform/wp8/AppMetrica.cs" />
+          <framework src="platform/wp8/Yandex.Metrica.WP8.dll" custom="true" />
+		  <framework src="platform/wp8/Ionic.Zip.dll" custom="true" />
+		  <framework src="platform/wp8/System.Net.Http.dll" custom="true" />
+		  <framework src="platform/wp8/System.Net.Http.Extensions.dll" custom="true" />
+		  <framework src="platform/wp8/System.Net.Http.Primitives.dll" custom="true" />
+    </platform>	
+	
+	
 </plugin>
