@@ -102,6 +102,10 @@
           </config-file>
           <source-file src="platform/wp8/AppMetrica.cs" />
           <framework src="platform/wp8/Yandex.Metrica.WP8.dll" custom="true" />
+		  <framework src="platform/wp8/Ionic.Zip.dll" custom="true" />
+		  <framework src="platform/wp8/System.Net.Http.dll" custom="true" />
+		  <framework src="platform/wp8/System.Net.Http.Extensions.dll" custom="true" />
+		  <framework src="platform/wp8/System.Net.Http.Primitives.dll" custom="true" />
     </platform>	
 	
 	

@@ -57,7 +57,13 @@ namespace Cordova.Extension.Commands
 			{
 				try
 				{
-					YandexMetrica.ReportEvent(optValues[0], optValues[1]);
+					String val = null;
+					if (optValues.Length > 1)
+						val = optValues[1];
+					if( val == null )
+						YandexMetrica.ReportEvent(optValues[0]);
+					else
+						YandexMetrica.ReportEvent(optValues[0], val);
 				}
 				catch (Exception ex)
 				{
