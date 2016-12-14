@@ -10,11 +10,11 @@
     <engines>
         <engine name="cordova" version=">=3.3.0"/>
     </engines>
-    <js-module src="www/AppMetrica.js" name="AppMetrica">
-        <clobbers target="window.plugins.appMetrica" />
-    </js-module>
     <!-- android -->
     <platform name="android">
+		<js-module src="www/AppMetrica.js" name="AppMetrica">
+			<clobbers target="window.plugins.appMetrica" />
+		</js-module>
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AppMetrica" >
                 <param name="android-package" value="com.appmetrica.cordova.plugin.AppMetrica"/>
@@ -62,6 +62,10 @@
 	
 	<!-- ios -->
     <platform name="ios">
+		<js-module src="www/AppMetrica.js" name="AppMetrica">
+			<clobbers target="window.plugins.appMetrica" />
+		</js-module>
+	
         <config-file target="config.xml" parent="/*">
             <feature name="AppMetrica">
                 <param name="ios-package" value="AppMetrica" />
@@ -87,26 +91,41 @@
         <framework src="platform/ios/Frameworks/YandexMobileMetrica.framework" custom="true" />
     </platform>
 	
-	<!-- Windows Phone -->
+	<!-- Windows Phone 8 -->
     <platform name="wp8">
-	
-          <config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App/Capabilities">
-               <Capability Name="ID_CAP_LOCATION" />
-			   <Capability Name="ID_CAP_NETWORKING" />
-			   <Capability Name="ID_CAP_IDENTITY_DEVICE" />
-          </config-file>
-          <config-file target="config.xml" parent="/*">
-               <feature name="AppMetrica">
-                    <param name="wp-package" value="AppMetrica"/>
-               </feature>
-          </config-file>
-          <source-file src="platform/wp8/AppMetrica.cs" />
-          <framework src="platform/wp8/Yandex.Metrica.WP8.dll" custom="true" />
-		  <framework src="platform/wp8/Ionic.Zip.dll" custom="true" />
-		  <framework src="platform/wp8/System.Net.Http.dll" custom="true" />
-		  <framework src="platform/wp8/System.Net.Http.Extensions.dll" custom="true" />
-		  <framework src="platform/wp8/System.Net.Http.Primitives.dll" custom="true" />
+		<js-module src="www/AppMetrica.js" name="AppMetrica">
+			<clobbers target="window.plugins.appMetrica" />
+		</js-module>
+		
+		<config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App/Capabilities">
+		   <Capability Name="ID_CAP_LOCATION" />
+		   <Capability Name="ID_CAP_NETWORKING" />
+		   <Capability Name="ID_CAP_IDENTITY_DEVICE" />
+		</config-file>
+		<config-file target="config.xml" parent="/*">
+		   <feature name="AppMetrica">
+				<param name="wp-package" value="AppMetrica"/>
+		   </feature>
+		</config-file>
+		<source-file src="platform/wp8/AppMetrica.cs" />
+		<framework src="platform/wp8/Yandex.Metrica.WP8.dll" custom="true" />
+		<framework src="platform/wp8/Ionic.Zip.dll" custom="true" />
+		<framework src="platform/wp8/System.Net.Http.dll" custom="true" />
+		<framework src="platform/wp8/System.Net.Http.Extensions.dll" custom="true" />
+		<framework src="platform/wp8/System.Net.Http.Primitives.dll" custom="true" />
     </platform>	
 	
+	<!-- Windows Phone -->
+	<platform name="windows">
+		<js-module src="platform/windows/AppMetrica.js" name="AppMetrica">
+			<clobbers target="window.plugins.appMetrica" />
+		</js-module>		
+        <framework src="platform/windows/AppMetricaWinJSProxy.winmd" custom="true" />
+		<framework src="platform/windows/Yandex.Metrica.WP8.1.dll" custom="true" />
+	    <framework src="platform/windows/Ionic.Zip.dll" custom="true" />
+	    <framework src="platform/windows/System.Net.Http.dll" custom="true" />
+	    <framework src="platform/windows/System.Net.Http.Extensions.dll" custom="true" />
+	    <framework src="platform/windows/System.Net.Http.Primitives.dll" custom="true" />
+	</platform>
 	
 </plugin>
